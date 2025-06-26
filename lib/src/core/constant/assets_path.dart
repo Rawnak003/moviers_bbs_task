@@ -7,4 +7,10 @@ class AssetsPath {
 
   static const String movieImagesPNG = '$_baseImagePath/on_boarding/movie_images.png';
   static const String playerImagesPNG = '$_baseImagePath/on_boarding/player_image.png';
+
+  static const String emailIconSVG = '$_baseIconPath/email.svg';
+  static const String lockIconSVG = '$_baseIconPath/lock.svg';
+  static const String googleIconSVG = '$_baseIconPath/google.svg';
+  static const String appleIconSVG = '$_baseIconPath/apple.svg';
+  static const String calendarIconSVG = '$_baseIconPath/calendar.svg';
 }

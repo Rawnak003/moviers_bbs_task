@@ -1,8 +1,10 @@
 import 'package:bbs_task/src/core/constant/strings.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../app/app_spacing.dart';
+import '../../../../core/constant/assets_path.dart';
 import '../../../../core/constant/colors.dart';
 import '../../../data/providers/splash/on_boarding_provider.dart';
 import '../../../data/static_data/on_boarding/item_data.dart';
@@ -17,10 +19,12 @@ class OnBoardingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final provider = Provider.of<OnBoardingProvider>(context);
     return Scaffold(
-      appBar: CustomAppBar(),
-      body: Padding(
-        padding: const EdgeInsets.all(AppSpacing.horizontalPadding),
-        child: SafeArea(
+      appBar: CustomAppBar(
+        child: SvgPicture.asset(AssetsPath.appLogoSVG, height: 28),
+      ),
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(AppSpacing.horizontalPadding),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -43,7 +47,9 @@ class OnBoardingScreen extends StatelessWidget {
                 children: [
                   ...List.generate(
                     onBoardingItems.length,
-                    (index) => DotIndicatorWidget(isActive: index == provider.pageIndex),
+                    (index) => DotIndicatorWidget(
+                      isActive: index == provider.pageIndex,
+                    ),
                   ),
                 ],
               ),
@@ -76,7 +82,11 @@ class OnBoardingScreen extends StatelessWidget {
           const SizedBox(width: AppSpacing.horizontalPadding),
           Expanded(
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed:
+                  () => Provider.of<OnBoardingProvider>(
+                    context,
+                    listen: false,
+                  ).onTapLogin(context),
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppColors.primaryColor,
               ),

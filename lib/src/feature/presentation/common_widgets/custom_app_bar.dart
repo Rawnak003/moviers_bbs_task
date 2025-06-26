@@ -1,15 +1,14 @@
-
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 
-import '../../../core/constant/assets_path.dart';
 import '../../../core/constant/colors.dart';
 import '../../../core/constant/strings.dart';
 import '../../data/providers/splash/on_boarding_provider.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({super.key});
+  const CustomAppBar({super.key, required this.child});
+
+  final Widget child;
 
   @override
   Widget build(BuildContext context) {
@@ -17,10 +16,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       backgroundColor: Colors.transparent,
       elevation: 0,
-      title: SvgPicture.asset(
-        AssetsPath.appLogoSVG,
-        height: 28,
-      ),
+      title: child,
       actions: [
         TextButton(
           onPressed: provider.skipToLastPage,

@@ -3,7 +3,6 @@ import 'package:bbs_task/src/feature/data/models/on_boarding/on_boarding_item_mo
 import '../../../../core/constant/assets_path.dart';
 import '../../../../core/constant/strings.dart';
 
-
 final List<OnBoardingItemModel> onBoardingItems = [
   OnBoardingItemModel(
     image: AssetsPath.movieImagesPNG,
