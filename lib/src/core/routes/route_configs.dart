@@ -2,6 +2,7 @@ import 'package:bbs_task/src/feature/presentation/screens/auth/login_screen.dart
 import 'package:bbs_task/src/feature/presentation/screens/auth/register_screen.dart';
 import 'package:bbs_task/src/feature/presentation/screens/on_boarding/on_boarding_screen.dart';
 import 'package:bbs_task/src/feature/presentation/screens/user/home/home_screen.dart';
+import 'package:bbs_task/src/feature/presentation/screens/user/personalization/personalization_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../feature/presentation/screens/auth/otp_verification_screen.dart';
@@ -30,6 +31,10 @@ class RouteConfigs {
       case RoutesName.otpVerification:
         return MaterialPageRoute(
           builder: (context) => const OtpVerificationScreen(),
+        );
+      case RoutesName.personalization:
+        return MaterialPageRoute(
+          builder: (context) => const PersonalizationScreen(),
         );
       case RoutesName.home:
         return MaterialPageRoute(

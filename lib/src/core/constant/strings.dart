@@ -36,4 +36,7 @@ class AppStrings{
   static const String otpVerification = 'OTP Verification';
   static const String codeSent = 'Code is sent to +1 412 **** ***31';
   static const String verify = 'Verify';
+  static const String personalization = 'Personalization';
+  static const String chooseYourGenre = 'Choose Your Genre';
+  static const String continueTo = 'Continue';
 }
