@@ -12,4 +12,5 @@ class AssetsPath {
   static const String lockIconSVG = '$_baseIconPath/lock.svg';
   static const String googleIconSVG = '$_baseIconPath/google.svg';
   static const String appleIconSVG = '$_baseIconPath/apple.svg';
+  static const String calendarIconSVG = '$_baseIconPath/calendar.svg';
 }

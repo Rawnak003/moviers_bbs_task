@@ -2,13 +2,13 @@ import 'package:bbs_task/src/app/app_spacing.dart';
 import 'package:bbs_task/src/core/constant/colors.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../../core/constant/assets_path.dart';
 import '../../../../../core/constant/strings.dart';
 import '../../../../data/providers/auth/login_provider.dart';
 import '../../../common_widgets/custom_app_bar.dart';
+import '../widgets/custom_outlined_button.dart';
 import '../widgets/custom_text_form_field.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -69,15 +69,16 @@ class LoginScreen extends StatelessWidget {
                   SizedBox(height: AppSpacing.screenHeight(context) * 0.018),
                   Center(child: Text(AppStrings.or, style: textTheme.bodyMedium?.copyWith(color: AppColors.greyColor,),),),
                   SizedBox(height: AppSpacing.screenHeight(context) * 0.018),
-                  _buildOutlinedButton(textTheme, AppColors.whiteColor, AppColors.blackColor, AssetsPath.appleIconSVG),
-                  SizedBox(height: AppSpacing.screenHeight(context) * 0.014),
-                  _buildOutlinedButton(textTheme, AppColors.transparentColor, AppColors.whiteColor, AssetsPath.googleIconSVG),
+                  CustomOutlinedButton(title: AppStrings.continueWithApple, textTheme: textTheme,bgColor: AppColors.whiteColor, textColor: AppColors.blackColor, image: AssetsPath.appleIconSVG),
+                  SizedBox(height: AppSpacing.screenHeight(context) * 0.02),
+                  CustomOutlinedButton(title: AppStrings.continueWithGoogle, textTheme: textTheme, bgColor: AppColors.transparentColor, textColor: AppColors.whiteColor, image: AssetsPath.googleIconSVG),
                   SizedBox(height: AppSpacing.screenHeight(context) * 0.18),
                   Center(
                     child: RichText(
+                      textAlign: TextAlign.center,
                       text: TextSpan(
                         children: [
-                          TextSpan(text: AppStrings.dontHaveAccount, style: textTheme.bodyLarge,),
+                          TextSpan(text: AppStrings.dontHaveAccount, style: textTheme.bodyLarge?.copyWith(color: AppColors.greyColor)),
                           TextSpan(
                             text: AppStrings.signUp,
                             style: textTheme.bodyLarge?.copyWith(color: AppColors.primaryColor, fontWeight: FontWeight.bold,),
@@ -92,21 +93,6 @@ class LoginScreen extends StatelessWidget {
             ),
           ),
         ),
-      ),
-    );
-  }
-
-  OutlinedButton _buildOutlinedButton(TextTheme textTheme, Color? bgColor, Color? textColor, String image,) {
-    return OutlinedButton(
-      onPressed: () {}, //TODO : implement sign in with apple/google
-      style: OutlinedButton.styleFrom(backgroundColor: bgColor,),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SvgPicture.asset(image),
-          SizedBox(width: 8),
-          Text(AppStrings.continueWithApple, style: textTheme.bodyMedium?.copyWith(color: textColor),),
-        ],
       ),
     );
   }
