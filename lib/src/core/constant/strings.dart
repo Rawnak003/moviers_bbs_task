@@ -33,4 +33,7 @@ class AppStrings{
   static const String forgetPassword = 'Forget Password?';
   static const String dontHaveAccount = 'Don\'t have an account? ';
   static const String confirmPassword = 'Confirm Password';
+  static const String otpVerification = 'OTP Verification';
+  static const String codeSent = 'Code is sent to +1 412 **** ***31';
+  static const String verify = 'Verify';
 }

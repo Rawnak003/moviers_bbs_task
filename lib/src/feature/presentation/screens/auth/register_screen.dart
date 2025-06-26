@@ -4,11 +4,11 @@ import 'package:bbs_task/src/feature/data/providers/auth/register_provider.dart'
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../../../../core/constant/assets_path.dart';
-import '../../../../../core/constant/strings.dart';
-import '../../../common_widgets/custom_app_bar.dart';
-import '../widgets/custom_outlined_button.dart';
-import '../widgets/custom_text_form_field.dart';
+import '../../../../core/constant/assets_path.dart';
+import '../../../../core/constant/strings.dart';
+import '../../common_widgets/custom_app_bar.dart';
+import 'widgets/custom_outlined_button.dart';
+import 'widgets/custom_text_form_field.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
@@ -22,7 +22,7 @@ class RegisterScreen extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(24),
+            padding: const EdgeInsets.all(AppSpacing.horizontalPadding * 1.5),
             child: Form(
               key: provider.formKey,
               child: Column(

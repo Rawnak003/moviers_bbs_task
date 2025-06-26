@@ -1,9 +1,10 @@
-import 'package:bbs_task/src/feature/data/providers/auth/register_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'app/app.dart';
 import 'feature/data/providers/auth/login_provider.dart';
+import 'feature/data/providers/auth/otp_verification_provider.dart';
+import 'feature/data/providers/auth/register_provider.dart';
 import 'feature/data/providers/splash/on_boarding_provider.dart';
 import 'feature/data/providers/splash/splash_provider.dart';
 
@@ -16,6 +17,7 @@ void main() {
         ChangeNotifierProvider(create: (_) => OnBoardingProvider()),
         ChangeNotifierProvider(create: (_) => LoginProvider()),
         ChangeNotifierProvider(create: (_) => RegisterProvider()),
+        ChangeNotifierProvider(create: (_) => OtpVerificationProvider()),
       ],
       child: const Moviers(),
     ),

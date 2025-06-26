@@ -42,7 +42,7 @@ class RegisterProvider extends ChangeNotifier {
   void onTapCreateAccount(context) {
     if (formKey.currentState!.validate() && _isFormFilled) {
       // TODO: implement create account logic
-      Navigator.pushNamedAndRemoveUntil(context, RoutesName.home, (predicate) => false);
+      Navigator.pushNamed(context, RoutesName.otpVerification);
     }
   }
 

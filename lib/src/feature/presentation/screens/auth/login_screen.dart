@@ -4,12 +4,12 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../../../../core/constant/assets_path.dart';
-import '../../../../../core/constant/strings.dart';
-import '../../../../data/providers/auth/login_provider.dart';
-import '../../../common_widgets/custom_app_bar.dart';
-import '../widgets/custom_outlined_button.dart';
-import '../widgets/custom_text_form_field.dart';
+import '../../../../core/constant/assets_path.dart';
+import '../../../../core/constant/strings.dart';
+import '../../../data/providers/auth/login_provider.dart';
+import '../../common_widgets/custom_app_bar.dart';
+import 'widgets/custom_outlined_button.dart';
+import 'widgets/custom_text_form_field.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -23,7 +23,7 @@ class LoginScreen extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(24),
+            padding: const EdgeInsets.all(AppSpacing.horizontalPadding * 1.5),
             child: Form(
               key: provider.formKey,
               child: Column(
