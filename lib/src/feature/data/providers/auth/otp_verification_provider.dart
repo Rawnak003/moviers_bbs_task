@@ -22,7 +22,7 @@ class OtpVerificationProvider extends ChangeNotifier {
 
   void onTapVerify(context) {
     if (formKey.currentState!.validate() && _isFormFilled) {
-      // TODO: implement create account logic
+      // TODO: implement otp verify logic
       Navigator.pushNamedAndRemoveUntil(context, RoutesName.home, (predicate) => false);
     }
   }

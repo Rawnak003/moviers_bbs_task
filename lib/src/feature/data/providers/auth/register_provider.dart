@@ -40,6 +40,7 @@ class RegisterProvider extends ChangeNotifier {
   }
 
   void onTapCreateAccount(context) {
+    FocusScope.of(context).unfocus();
     if (formKey.currentState!.validate() && _isFormFilled) {
       // TODO: implement create account logic
       Navigator.pushNamed(context, RoutesName.otpVerification);

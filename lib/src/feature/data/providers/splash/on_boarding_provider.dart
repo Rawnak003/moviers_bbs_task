@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../../core/routes/route_names.dart';
 import '../../static_data/on_boarding/item_data.dart';
@@ -20,13 +19,8 @@ class OnBoardingProvider extends ChangeNotifier {
     pageController.animateToPage(
       onBoardingItems.length - 1,
       duration: const Duration(milliseconds: 300),
-      curve: Curves.ease,
+      curve: Curves.easeInOut,
     );
-  }
-
-  Future<void> completeOnBoarding() async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setBool('onBoardingCompleted', true);
   }
 
   void onTapLogin(context) {

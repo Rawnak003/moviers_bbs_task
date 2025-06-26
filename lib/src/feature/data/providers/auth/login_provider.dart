@@ -30,6 +30,7 @@ class LoginProvider extends ChangeNotifier {
   }
 
   void onTapLogin(context) {
+    FocusScope.of(context).unfocus();
     if (formKey.currentState!.validate() && _isFormFilled) {
       // TODO: implement login logic
       Navigator.pushNamedAndRemoveUntil(context, RoutesName.home, (predicate) => false);
