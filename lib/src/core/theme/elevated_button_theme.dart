@@ -1,3 +1,4 @@
+import 'package:bbs_task/src/app/app_spacing.dart';
 import 'package:flutter/material.dart';
 import '../constant/colors.dart';
 
@@ -12,8 +13,8 @@ class AppElevatedButtonTheme {
           fontSize: 16,
           fontWeight: FontWeight.w400,
         ),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
-        padding: const EdgeInsets.symmetric(vertical: 16),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+        padding: const EdgeInsets.symmetric(vertical: AppSpacing.verticalPadding),
       ),
     );
   }

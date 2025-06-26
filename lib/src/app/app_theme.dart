@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../core/constant/colors.dart';
 import '../core/theme/elevated_button_theme.dart';
+import '../core/theme/input_decoration_theme.dart';
+import '../core/theme/outlined_button_theme.dart';
 import '../core/theme/text_theme.dart';
 
 class AppTheme {
@@ -19,5 +21,7 @@ class AppTheme {
     scaffoldBackgroundColor: Colors.black,
     textTheme: AppTextTheme.appTextTheme,
     elevatedButtonTheme: AppElevatedButtonTheme.elevatedButtonTheme,
+    inputDecorationTheme: AppInputDecoration.inputDecoration,
+    outlinedButtonTheme: AppOutlinedButtonTheme.outlinedButtonTheme,
   );
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../../../core/routes/route_names.dart';
 import '../../static_data/on_boarding/item_data.dart';
 
 class OnBoardingProvider extends ChangeNotifier {
@@ -26,6 +27,10 @@ class OnBoardingProvider extends ChangeNotifier {
   Future<void> completeOnBoarding() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool('onBoardingCompleted', true);
+  }
+
+  void onTapLogin(context) {
+    Navigator.pushNamed(context, RoutesName.login);
   }
 
   @override

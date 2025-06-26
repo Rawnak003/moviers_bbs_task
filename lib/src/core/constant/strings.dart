@@ -8,10 +8,15 @@ class AppStrings{
   static const String playerTitle = 'Best Service Features';
   static const String playerSubtitle = 'The features we provide will guarantee the\nbest quality for your streaming';
   static const String skip = 'Skip';
+  static const String or = 'or';
   static const String getStarted = 'Get Started';
   static const String home = 'Home';
   static const String login = 'Login';
+  static const String continueWithApple = 'Continue with Apple';
+  static const String continueWithGoogle = 'Continue with Google';
+  static const String welcomeToMoviers = 'Welcome to Moviers';
   static const String logout = 'Logout';
+  static const String signUp = 'Sign Up';
   static const String register = 'Register';
   static const String cancel = 'Cancel';
   static const String email = 'Email';
