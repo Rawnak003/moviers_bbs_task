@@ -41,8 +41,8 @@ class AppTextTheme {
         fontWeight: FontWeight.w400,
       ),
       bodySmall: TextStyle(
-        color: AppColors.whiteColor,
-        fontSize: 10,
+        color: AppColors.greyColor,
+        fontSize: 12,
         fontWeight: FontWeight.w400,
       ),
     );
