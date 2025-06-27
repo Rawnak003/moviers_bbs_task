@@ -25,10 +25,6 @@ class RegisterProvider extends ChangeNotifier {
     passwordFocusNode = FocusNode();
     confirmPasswordFocusNode = FocusNode();
     dateFocusNode = FocusNode();
-    emailFocusNode.addListener(() => notifyListeners());
-    passwordFocusNode.addListener(() => notifyListeners());
-    confirmPasswordFocusNode.addListener(() => notifyListeners());
-    dateFocusNode.addListener(() => notifyListeners());
   }
 
   void _checkFormFilled() {

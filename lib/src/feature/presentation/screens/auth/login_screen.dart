@@ -16,7 +16,7 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<LoginProvider>(context);
+    final provider = context.read<LoginProvider>();
     final textTheme = Theme.of(context).textTheme;
     return Scaffold(
       appBar: CustomAppBar(child: Text(AppStrings.login)),
@@ -37,6 +37,7 @@ class LoginScreen extends StatelessWidget {
                     controller: provider.emailTEController,
                     hintText: AppStrings.email,
                     focusNode: provider.emailFocusNode,
+                    fieldId: "loginEmail",
                   ),
                   SizedBox(height: AppSpacing.screenHeight(context) * 0.02),
                   CustomTextFormField(
@@ -46,6 +47,7 @@ class LoginScreen extends StatelessWidget {
                     hintText: AppStrings.password,
                     isDone: true,
                     obscureText: true,
+                    fieldId: "loginPassword",
                   ),
                   SizedBox(height: AppSpacing.screenHeight(context) * 0.01),
                   Align(alignment: Alignment.centerRight,
@@ -55,16 +57,21 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: AppSpacing.screenHeight(context) * 0.01),
-                  SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: provider.isFormFilled ? () => provider.onTapLogin(context) : null,
-                      style: ElevatedButton.styleFrom(backgroundColor: provider.isFormFilled ? AppColors.primaryColor : AppColors.backgroundColor,),
-                      child: Text(
-                        AppStrings.login,
-                        style: textTheme.bodyLarge?.copyWith(color: provider.isFormFilled ? AppColors.whiteColor : AppColors.greyColor,),
-                      ),
-                    ),
+                  Consumer<LoginProvider>(
+                    builder: (_, loginProvider, __) {
+                      final enabled = loginProvider.isFormFilled;
+                      return SizedBox(
+                        width: double.infinity,
+                        child: ElevatedButton(
+                          onPressed: enabled ? () => loginProvider.onTapLogin(context) : null,
+                          style: ElevatedButton.styleFrom(backgroundColor: enabled ? AppColors.primaryColor : AppColors.backgroundColor,),
+                          child: Text(
+                            AppStrings.login,
+                            style: textTheme.bodyLarge?.copyWith(color: enabled ? AppColors.whiteColor : AppColors.greyColor,),
+                          ),
+                        ),
+                      );
+                    }
                   ),
                   SizedBox(height: AppSpacing.screenHeight(context) * 0.018),
                   Center(child: Text(AppStrings.or, style: textTheme.bodyMedium?.copyWith(color: AppColors.greyColor,),),),
