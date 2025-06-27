@@ -28,7 +28,7 @@ class CustomMovieCard extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           Text(movieList[index+1].movieName, style: Theme.of(context).textTheme.bodyLarge),
-          CustomMovieInfoTab(index: index+1,),
+          CustomMovieInfoTab(index: index+1, showGenre: true,),
           const SizedBox(height: 8),
         ],
       ),

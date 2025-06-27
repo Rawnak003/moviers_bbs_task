@@ -67,7 +67,7 @@ class CustomMovieBannerWidget extends StatelessWidget {
             child: Column(
               children: [
                 const SizedBox(height: AppSpacing.verticalPadding * 0.5),
-                CustomMovieInfoTab(index: 0,),
+                CustomMovieInfoTab(index: 0, showGenre: true,),
                 const SizedBox(height: AppSpacing.verticalPadding * 2),
                 Row(
                   children: [

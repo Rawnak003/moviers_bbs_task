@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 
 import '../../../../../core/constant/assets_path.dart';
 import '../../../../../core/constant/strings.dart';
+import '../top_charts/top_charts_screen.dart';
 
 class ParentScreen extends StatelessWidget {
   const ParentScreen({super.key});
@@ -17,7 +18,13 @@ class ParentScreen extends StatelessWidget {
         return SafeArea(
           top: false,
           child: Scaffold(
-            body: provider.screens[provider.selectedIndex],
+            body: Stack(
+              children: [
+                provider.screens[provider.selectedIndex],
+                if (provider.showTopCharts)
+                  const TopChartsScreen(),
+              ],
+            ),
             bottomNavigationBar: Container(
               decoration: BoxDecoration(
                 color: AppColors.blackColor,

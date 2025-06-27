@@ -5,9 +5,10 @@ import '../../../../../../core/constant/colors.dart';
 import '../../../../../data/static_data/user/movie_data.dart';
 
 class CustomMovieInfoTab extends StatelessWidget {
-  const CustomMovieInfoTab({super.key, required this.index});
+  const CustomMovieInfoTab({super.key, required this.index, this.showGenre = false});
 
   final int index;
+  final bool showGenre;
 
   @override
   Widget build(BuildContext context) {
@@ -25,8 +26,10 @@ class CustomMovieInfoTab extends StatelessWidget {
         _buildMovieInfo(context, movieList[index].releaseYear.toString(),),
         SizedBox(width: AppSpacing.screenWidth(context) * 0.05),
         _buildMovieInfo(context, movieList[index].duration),
-        SizedBox(width: AppSpacing.screenWidth(context) * 0.05),
-        _buildMovieInfo(context, movieList[index].movieGenre),
+        if (showGenre)...[
+          SizedBox(width: AppSpacing.screenWidth(context) * 0.05),
+          _buildMovieInfo(context, movieList[index].movieGenre),
+        ]
       ],
     );
   }

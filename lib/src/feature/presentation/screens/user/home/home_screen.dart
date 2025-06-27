@@ -1,5 +1,7 @@
+import 'package:bbs_task/src/feature/data/providers/user/parent_screen_provider.dart';
 import 'package:bbs_task/src/feature/data/static_data/user/popular_star_data.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../../../../app/app_spacing.dart';
 import '../../../../../core/constant/colors.dart';
@@ -67,9 +69,13 @@ class HomeScreen extends StatelessWidget {
           Text(title, style: textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.w600)),
           Spacer(),
           if (hasButton)
-            TextButton(
-              onPressed: () {},
-              child: Text(AppStrings.viewAll, style: textTheme.bodyMedium?.copyWith(color: AppColors.lighterGreyColor,),),
+            Consumer<ParentScreenProvider>(
+              builder: (_, provider, __) {
+                return TextButton(
+                  onPressed: () => context.read<ParentScreenProvider>().openTopCharts(),
+                  child: Text(AppStrings.viewAll, style: textTheme.bodyMedium?.copyWith(color: AppColors.lighterGreyColor,),),
+                );
+              }
             ),
         ],
       ),
