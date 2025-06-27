@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 import '../../../../core/constant/assets_path.dart';
 import '../../../../core/constant/strings.dart';
 import '../../common_widgets/custom_app_bar.dart';
+import 'widgets/bottom_policy_text_widget.dart';
 import 'widgets/custom_outlined_button.dart';
 import 'widgets/custom_text_form_field.dart';
 
@@ -15,7 +16,7 @@ class RegisterScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<RegisterProvider>(context);
+    final provider = context.read<RegisterProvider>();
     final textTheme = Theme.of(context).textTheme;
     return Scaffold(
       appBar: CustomAppBar(child: Text(AppStrings.register)),
@@ -29,13 +30,17 @@ class RegisterScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(height: AppSpacing.screenHeight(context) * 0.04),
-                  Text(AppStrings.createNewAccount, style: textTheme.titleLarge,),
+                  Text(
+                    AppStrings.createNewAccount,
+                    style: textTheme.titleLarge,
+                  ),
                   SizedBox(height: AppSpacing.screenHeight(context) * 0.05),
                   CustomTextFormField(
                     svgIconPath: AssetsPath.emailIconSVG,
                     controller: provider.emailTEController,
                     hintText: AppStrings.email,
                     focusNode: provider.emailFocusNode,
+                    fieldId: "email",
                   ),
                   SizedBox(height: AppSpacing.screenHeight(context) * 0.02),
                   CustomTextFormField(
@@ -44,6 +49,7 @@ class RegisterScreen extends StatelessWidget {
                     focusNode: provider.passwordFocusNode,
                     hintText: AppStrings.password,
                     obscureText: true,
+                    fieldId: "password",
                   ),
                   SizedBox(height: AppSpacing.screenHeight(context) * 0.02),
                   CustomTextFormField(
@@ -52,6 +58,7 @@ class RegisterScreen extends StatelessWidget {
                     focusNode: provider.confirmPasswordFocusNode,
                     hintText: AppStrings.confirmPassword,
                     obscureText: true,
+                    fieldId: "confirmPassword",
                   ),
                   SizedBox(height: AppSpacing.screenHeight(context) * 0.02),
                   CustomTextFormField(
@@ -60,45 +67,33 @@ class RegisterScreen extends StatelessWidget {
                     focusNode: provider.dateFocusNode,
                     hintText: AppStrings.dateFormat,
                     isDone: true,
+                    fieldId: "date",
                   ),
                   SizedBox(height: AppSpacing.screenHeight(context) * 0.03),
-                  SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: provider.isFormFilled ? () => provider.onTapCreateAccount(context) : null,
-                      style: ElevatedButton.styleFrom(backgroundColor: provider.isFormFilled ? AppColors.primaryColor : AppColors.backgroundColor,),
-                      child: Text(
-                        AppStrings.createAccount,
-                        style: textTheme.bodyLarge?.copyWith(color: provider.isFormFilled ? AppColors.whiteColor : AppColors.greyColor,),
-                      ),
-                    ),
+                  Consumer<RegisterProvider>(
+                    builder: (_, registerProvider, __) {
+                      final enabled = registerProvider.isFormFilled;
+                      return SizedBox(
+                        width: double.infinity,
+                        child: ElevatedButton(
+                          onPressed: enabled ? () => registerProvider.onTapCreateAccount(context) : null,
+                          style: ElevatedButton.styleFrom(backgroundColor: enabled ? AppColors.primaryColor : AppColors.backgroundColor,),
+                          child: Text(
+                            AppStrings.createAccount,
+                            style: textTheme.bodyLarge?.copyWith(color: enabled ? AppColors.whiteColor : AppColors.greyColor,),
+                          ),
+                        ),
+                      );
+                    }
                   ),
                   SizedBox(height: AppSpacing.screenHeight(context) * 0.018),
                   Center(child: Text(AppStrings.or, style: textTheme.bodyMedium?.copyWith(color: AppColors.greyColor,),),),
                   SizedBox(height: AppSpacing.screenHeight(context) * 0.018),
-                  CustomOutlinedButton(title: AppStrings.registerWithApple, textTheme: textTheme,bgColor: AppColors.whiteColor, textColor: AppColors.blackColor, image: AssetsPath.appleIconSVG),
+                  CustomOutlinedButton(title: AppStrings.registerWithApple, textTheme: textTheme, bgColor: AppColors.whiteColor, textColor: AppColors.blackColor, image: AssetsPath.appleIconSVG,),
                   SizedBox(height: AppSpacing.screenHeight(context) * 0.02),
-                  CustomOutlinedButton(title: AppStrings.registerWithGoogle, textTheme: textTheme, bgColor: AppColors.transparentColor, textColor: AppColors.whiteColor, image: AssetsPath.googleIconSVG),
+                  CustomOutlinedButton(title: AppStrings.registerWithGoogle, textTheme: textTheme, bgColor: AppColors.transparentColor, textColor: AppColors.whiteColor, image: AssetsPath.googleIconSVG,),
                   SizedBox(height: AppSpacing.screenHeight(context) * 0.08),
-                  Center(
-                    child: RichText(
-                      textAlign: TextAlign.center,
-                      text: TextSpan(
-                        children: [
-                          TextSpan(text: AppStrings.createAccountMessage, style: textTheme.bodyLarge?.copyWith(color: AppColors.greyColor)),
-                          TextSpan(
-                            text: AppStrings.privacyPolicy,
-                            style: textTheme.bodyLarge?.copyWith(color: AppColors.primaryColor, fontWeight: FontWeight.w400,),
-                          ),
-                          TextSpan(text: AppStrings.and, style: textTheme.bodyLarge?.copyWith(color: AppColors.greyColor)),
-                          TextSpan(
-                            text: AppStrings.termsOfUse,
-                            style: textTheme.bodyLarge?.copyWith(color: AppColors.primaryColor, fontWeight: FontWeight.w400,),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                  BottomPolicyTextWidget(),
                 ],
               ),
             ),

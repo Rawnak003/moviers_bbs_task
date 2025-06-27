@@ -17,8 +17,6 @@ class LoginProvider extends ChangeNotifier {
     passwordTEController.addListener(_checkFormFilled);
     emailFocusNode = FocusNode();
     passwordFocusNode = FocusNode();
-    emailFocusNode.addListener(() => notifyListeners());
-    passwordFocusNode.addListener(() => notifyListeners());
   }
 
   void _checkFormFilled() {

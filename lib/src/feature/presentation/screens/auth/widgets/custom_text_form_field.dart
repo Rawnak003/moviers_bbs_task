@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
 import '../../../../../core/constant/colors.dart';
+import '../../../../data/providers/auth/text_field_focus_provider.dart';
 
-class CustomTextFormField extends StatefulWidget {
+class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField({
     super.key,
     required this.hintText,
     required this.svgIconPath,
     required this.controller,
+    required this.focusNode,
     this.obscureText,
     this.isDone = false,
-    required this.focusNode,
+    required this.fieldId,
   });
 
   final String hintText;
@@ -19,41 +22,29 @@ class CustomTextFormField extends StatefulWidget {
   final FocusNode focusNode;
   final bool? obscureText;
   final bool isDone;
+  final String fieldId;
 
-  @override
-  State<CustomTextFormField> createState() => _CustomTextFormFieldState();
-}
-
-class _CustomTextFormFieldState extends State<CustomTextFormField> {
-  late FocusNode _focusNode;
-  bool _isFocused = false;
-
-  @override
-  void initState() {
-    super.initState();
-    _focusNode = widget.focusNode;
-    _focusNode.addListener(() {
-      setState(() {
-        _isFocused = _focusNode.hasFocus;
-      });
-    });
-    _isFocused = _focusNode.hasFocus;
-  }
   @override
   Widget build(BuildContext context) {
+    final isFocused = context.select<TextFieldFocusProvider, bool>((provider) => provider.isFocused(fieldId),);
+
+    focusNode.addListener(() {
+      context.read<TextFieldFocusProvider>().setFocus(fieldId, focusNode.hasFocus);
+    });
+
     return TextFormField(
-      controller: widget.controller,
-      focusNode: _focusNode,
-      obscureText: widget.obscureText ?? false,
-      textInputAction: widget.isDone ? TextInputAction.done : TextInputAction.next,
+      controller: controller,
+      focusNode: focusNode,
+      obscureText: obscureText ?? false,
+      textInputAction: isDone ? TextInputAction.done : TextInputAction.next,
       decoration: InputDecoration(
-        hintText: widget.hintText,
+        hintText: hintText,
         prefixIcon: Padding(
           padding: const EdgeInsets.all(12),
           child: SvgPicture.asset(
-            widget.svgIconPath,
+            svgIconPath,
             colorFilter: ColorFilter.mode(
-              _isFocused ? AppColors.primaryColor : AppColors.greyColor,
+              isFocused ? AppColors.primaryColor : AppColors.greyColor,
               BlendMode.srcIn,
             ),
             width: 20,
@@ -65,3 +56,4 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
     );
   }
 }
+

@@ -1,3 +1,4 @@
+import 'package:bbs_task/src/feature/presentation/screens/auth/widgets/bottom_policy_text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
@@ -13,7 +14,7 @@ class OtpVerificationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final otpProvider = Provider.of<OtpVerificationProvider>(context);
+    final provider = context.read<OtpVerificationProvider>();
     final textTheme = Theme.of(context).textTheme;
     return Scaffold(
       appBar: CustomAppBar(child: Text(AppStrings.otpVerification)),
@@ -22,12 +23,17 @@ class OtpVerificationScreen extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(AppSpacing.horizontalPadding * 1.5),
             child: Form(
-              key: otpProvider.formKey,
+              key: provider.formKey,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SizedBox(height: AppSpacing.screenHeight(context) * 0.04),
-                  Text(AppStrings.codeSent, style: textTheme.bodyLarge?.copyWith(color: AppColors.greyColor)),
+                  Text(
+                    AppStrings.codeSent,
+                    style: textTheme.bodyLarge?.copyWith(
+                      color: AppColors.greyColor,
+                    ),
+                  ),
                   SizedBox(height: AppSpacing.screenHeight(context) * 0.03),
                   PinCodeTextField(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -35,7 +41,7 @@ class OtpVerificationScreen extends StatelessWidget {
                     obscureText: false,
                     animationType: AnimationType.fade,
                     keyboardType: TextInputType.number,
-                    separatorBuilder: (ctx, index) => const SizedBox(width: 10),
+                    separatorBuilder: (c, index) => const SizedBox(width: 10),
                     pinTheme: PinTheme(
                       shape: PinCodeFieldShape.box,
                       borderRadius: BorderRadius.circular(5),
@@ -47,39 +53,28 @@ class OtpVerificationScreen extends StatelessWidget {
                     ),
                     animationDuration: Duration(milliseconds: 300),
                     backgroundColor: AppColors.transparentColor,
-                    controller: otpProvider.pinInputTEController,
+                    controller: provider.pinInputTEController,
                     appContext: context,
                     autoFocus: true,
                   ),
                   SizedBox(height: AppSpacing.screenHeight(context) * 0.04),
-                  RichText(
-                    textAlign: TextAlign.center,
-                    text: TextSpan(
-                      children: [
-                        TextSpan(text: AppStrings.createAccountMessage, style: textTheme.bodyLarge?.copyWith(color: AppColors.greyColor)),
-                        TextSpan(
-                          text: AppStrings.privacyPolicy,
-                          style: textTheme.bodyLarge?.copyWith(color: AppColors.primaryColor, fontWeight: FontWeight.w400,),
-                        ),
-                        TextSpan(text: AppStrings.and, style: textTheme.bodyLarge?.copyWith(color: AppColors.greyColor)),
-                        TextSpan(
-                          text: AppStrings.termsOfUse,
-                          style: textTheme.bodyLarge?.copyWith(color: AppColors.primaryColor, fontWeight: FontWeight.w400,),
-                        ),
-                      ],
-                    ),
-                  ),
+                  BottomPolicyTextWidget(),
                   SizedBox(height: AppSpacing.screenHeight(context) * 0.2),
-                  SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: otpProvider.isFormFilled ? () => otpProvider.onTapVerify(context) : null,
-                      style: ElevatedButton.styleFrom(backgroundColor: otpProvider.isFormFilled ? AppColors.primaryColor : AppColors.backgroundColor,),
-                      child: Text(
-                        AppStrings.verify,
-                        style: textTheme.bodyLarge?.copyWith(color: otpProvider.isFormFilled ? AppColors.whiteColor : AppColors.greyColor,),
-                      ),
-                    ),
+                  Consumer<OtpVerificationProvider>(
+                    builder: (_, otpProvider, __) {
+                      final enabled = otpProvider.isFormFilled;
+                      return SizedBox(
+                        width: double.infinity,
+                        child: ElevatedButton(
+                          onPressed: enabled ? () => otpProvider.onTapVerify(context) : null,
+                          style: ElevatedButton.styleFrom(backgroundColor: enabled ? AppColors.primaryColor : AppColors.backgroundColor,),
+                          child: Text(
+                            AppStrings.verify,
+                            style: textTheme.bodyLarge?.copyWith(color: enabled ? AppColors.whiteColor : AppColors.greyColor,),
+                          ),
+                        ),
+                      );
+                    }
                   ),
                 ],
               ),

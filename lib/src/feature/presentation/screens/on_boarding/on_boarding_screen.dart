@@ -17,49 +17,48 @@ class OnBoardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<OnBoardingProvider>(context);
     return Scaffold(
       appBar: CustomAppBar(
         child: SvgPicture.asset(AssetsPath.appLogoSVG, height: 28),
       ),
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(AppSpacing.horizontalPadding),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Expanded(
-                child: PageView.builder(
-                  itemCount: onBoardingItems.length,
-                  controller: provider.pageController,
-                  onPageChanged: provider.onPageChanged,
-                  itemBuilder: (context, index) {
-                    return OnBoardingItemWidget(
-                      image: onBoardingItems[index].image,
-                      title: onBoardingItems[index].title,
-                      subtitle: onBoardingItems[index].subtitle,
-                    );
-                  },
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+      body: Consumer<OnBoardingProvider>(
+        builder: (_, provider, __) {
+          return SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.all(AppSpacing.horizontalPadding),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  ...List.generate(
-                    onBoardingItems.length,
-                    (index) => DotIndicatorWidget(
-                      isActive: index == provider.pageIndex,
+                  Expanded(
+                    child: PageView.builder(
+                      itemCount: onBoardingItems.length,
+                      controller: provider.pageController,
+                      onPageChanged: provider.onPageChanged,
+                      itemBuilder: (context, index) {
+                        return OnBoardingItemWidget(
+                          image: onBoardingItems[index].image,
+                          title: onBoardingItems[index].title,
+                          subtitle: onBoardingItems[index].subtitle,
+                        );
+                      },
                     ),
                   ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ...List.generate(onBoardingItems.length, (index) => DotIndicatorWidget(isActive: index == provider.pageIndex,),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 32),
+                  provider.isLastPage
+                      ? _buildBottomBar(context)
+                      : SizedBox(height: AppSpacing.screenHeight(context) * 0.12),
                 ],
               ),
-              const SizedBox(height: 32),
-              provider.isLastPage
-                  ? _buildBottomBar(context)
-                  : SizedBox(height: AppSpacing.screenHeight(context) * 0.12),
-            ],
-          ),
-        ),
+            ),
+          );
+        }
       ),
     );
   }
@@ -82,14 +81,8 @@ class OnBoardingScreen extends StatelessWidget {
           const SizedBox(width: AppSpacing.horizontalPadding),
           Expanded(
             child: ElevatedButton(
-              onPressed:
-                  () => Provider.of<OnBoardingProvider>(
-                    context,
-                    listen: false,
-                  ).onTapLogin(context),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.primaryColor,
-              ),
+              onPressed: () => Provider.of<OnBoardingProvider>(context, listen: false,).onTapLogin(context),
+              style: ElevatedButton.styleFrom(backgroundColor: AppColors.primaryColor,),
               child: Text(AppStrings.login),
             ),
           ),

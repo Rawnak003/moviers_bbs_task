@@ -5,6 +5,7 @@ import 'app/app.dart';
 import 'feature/data/providers/auth/login_provider.dart';
 import 'feature/data/providers/auth/otp_verification_provider.dart';
 import 'feature/data/providers/auth/register_provider.dart';
+import 'feature/data/providers/auth/text_field_focus_provider.dart';
 import 'feature/data/providers/splash/on_boarding_provider.dart';
 import 'feature/data/providers/splash/splash_provider.dart';
 import 'feature/data/providers/user/genre_provider.dart';
@@ -19,6 +20,7 @@ void main() {
         ChangeNotifierProvider(create: (_) => LoginProvider()),
         ChangeNotifierProvider(create: (_) => RegisterProvider()),
         ChangeNotifierProvider(create: (_) => OtpVerificationProvider()),
+        ChangeNotifierProvider(create: (_) => TextFieldFocusProvider()),
         ChangeNotifierProvider(create: (_) => GenreProvider()),
       ],
       child: const Moviers(),
