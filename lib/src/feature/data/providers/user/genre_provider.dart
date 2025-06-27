@@ -20,6 +20,6 @@ class GenreProvider extends ChangeNotifier {
 
   void onTapContinue(context) {
     // TODO: implement save genre and continue logic
-    Navigator.pushReplacementNamed(context, RoutesName.home);
+    Navigator.pushReplacementNamed(context, RoutesName.parent);
   }
 }

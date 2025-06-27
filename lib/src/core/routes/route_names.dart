@@ -5,5 +5,5 @@ class RoutesName {
   static const String register = '/register';
   static const String otpVerification = '/otp-verification';
   static const String personalization = '/personalization';
-  static const String home = '/home';
+  static const String parent = '/parent';
 }

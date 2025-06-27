@@ -21,4 +21,11 @@ class AssetsPath {
   static const String fantasyGenrePNG = '$_baseImagePath/genre/fantasy.png';
   static const String horrorGenrePNG = '$_baseImagePath/genre/horror.png';
   static const String userIconSVG = '$_baseIconPath/user_icon.svg';
+
+  static const String homeIconSVG = '$_baseIconPath/user/home.svg';
+  static const String homeFilledIconSVG = '$_baseIconPath/user/home_filled_blue.svg';
+  static const String watchListIconSVG = '$_baseIconPath/user/bookmark.svg';
+  static const String watchListFilledIconSVG = '$_baseIconPath/user/bookmark_filled_blue.svg';
+  static const String searchIconSVG = '$_baseIconPath/user/search.svg';
+  static const String accountIconPNG = '$_baseIconPath/user/user_profile.png';
 }
