@@ -42,4 +42,10 @@ class AppStrings{
   static const String watchList = 'Watchlist';
   static const String search = 'Search';
   static const String accounts = 'Accounts';
+  static const String watchMovie = 'Watch Movie';
+  static const String watchSeries = 'Watch Series';
+  static const String topCharts = 'Top Charts';
+  static const String viewAll = 'View All';
+  static const String weeklyHighlights = 'Weekly Highlights';
+  static const String popularStar = 'Popular Star';
 }

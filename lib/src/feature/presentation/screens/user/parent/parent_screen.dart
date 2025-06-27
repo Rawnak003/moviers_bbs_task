@@ -36,9 +36,9 @@ class ParentScreen extends StatelessWidget {
                   overlayColor: WidgetStateProperty.all(Colors.transparent),
                   labelTextStyle: WidgetStateProperty.resolveWith<TextStyle>((Set<WidgetState> states,) {
                     if (states.contains(WidgetState.selected)) {
-                      return TextStyle(color: AppColors.whiteColor, fontWeight: FontWeight.bold,);
+                      return TextStyle(fontSize: 11, color: AppColors.whiteColor, fontWeight: FontWeight.bold,);
                     }
-                    return TextStyle(color: AppColors.lightGreyColor);
+                    return TextStyle(fontSize: 11, color: AppColors.lightGreyColor);
                   }),
                 ),
                 child: NavigationBar(

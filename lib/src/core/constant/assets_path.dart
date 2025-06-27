@@ -28,4 +28,24 @@ class AssetsPath {
   static const String watchListFilledIconSVG = '$_baseIconPath/user/bookmark_filled_blue.svg';
   static const String searchIconSVG = '$_baseIconPath/user/search.svg';
   static const String accountIconPNG = '$_baseIconPath/user/user_profile.png';
+  static const String playIconSVG = '$_baseIconPath/user/play.svg';
+
+  static const String movie1PNG = '$_baseImagePath/user/movie1.png';
+  static const String movie2PNG = '$_baseImagePath/user/movie2.png';
+  static const String movie3PNG = '$_baseImagePath/user/movie3.jpeg';
+  static const String movie4PNG = '$_baseImagePath/user/movie4.png';
+  static const String movie5PNG = '$_baseImagePath/user/movie5.png';
+  static const String movie6PNG = '$_baseImagePath/user/movie6.png';
+  static const String movie7PNG = '$_baseImagePath/user/movie7.png';
+
+  static const String star1PNG = '$_baseImagePath/user/pic1.png';
+  static const String star2PNG = '$_baseImagePath/user/pic2.png';
+  static const String star3PNG = '$_baseImagePath/user/pic3.png';
+  static const String star4PNG = '$_baseImagePath/user/pic4.jpg';
+  static const String star5PNG = '$_baseImagePath/user/pic5.jpg';
+  static const String star6PNG = '$_baseImagePath/user/pic6.jpg';
+  static const String star7PNG = '$_baseImagePath/user/pic7.jpg';
+
+
+
 }
