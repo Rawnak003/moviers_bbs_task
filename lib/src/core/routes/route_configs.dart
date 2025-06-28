@@ -8,6 +8,7 @@ import '../../feature/presentation/screens/on_boarding/on_boarding_screen.dart';
 import '../../feature/presentation/screens/splash/splash_screen.dart';
 import '../../feature/presentation/screens/user/parent/parent_screen.dart';
 import '../../feature/presentation/screens/user/personalization/personalization_screen.dart';
+import '../../feature/presentation/screens/user/series_details/series_details_widget.dart';
 import 'route_names.dart';
 
 class RouteConfigs {
@@ -44,6 +45,10 @@ class RouteConfigs {
       case RoutesName.videoDetails:
         return MaterialPageRoute(
           builder: (context) => VideoDetailsScreen(),
+        );
+      case RoutesName.seriesDetails:
+        return MaterialPageRoute(
+          builder: (context) => SeriesDetailsScreen(),
         );
 
       default:

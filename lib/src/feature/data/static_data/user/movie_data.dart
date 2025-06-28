@@ -11,7 +11,7 @@ final List<MovieModel> movieList = [
   MovieModel(movieId: 6, movieName: 'Soul', imagePath: AssetsPath.movie6PNG, rating: 8.4, movieGenre: "Comedy", releaseYear: 2016, duration: '1h 54m'),
   MovieModel(movieId: 7, movieName: 'Brave', imagePath: AssetsPath.movie7PNG, rating: 8.4, movieGenre: "Adventure", releaseYear: 2016, duration: '1h 54m'),
   MovieModel(movieId: 8, movieName: 'Suicide Squad', imagePath: AssetsPath.movie8PNG, rating: 7.6, movieGenre: "Sci-fi", releaseYear: 2015, duration: '1h 24m'),
-  MovieModel(movieId: 9, movieName: 'Rogue One: A Star Wars Story', imagePath: AssetsPath.movie1PNG, rating: 8.4, movieGenre: "Sci-fi", releaseYear: 2016, duration: '1h 54m'),
+  MovieModel(movieId: 9, movieName: 'The Mandalorian', imagePath: AssetsPath.movie9PNG, rating: 8.8, movieGenre: "Action", releaseYear: 2019, duration: '1h 54m', seasonCount: 2, episodeCount: 18),
   MovieModel(movieId: 10, movieName: 'Rogue One: A Star Wars Story', imagePath: AssetsPath.movie1PNG, rating: 8.4, movieGenre: "Sci-fi", releaseYear: 2016, duration: '1h 54m'),
   MovieModel(movieId: 11, movieName: 'Rogue One: A Star Wars Story', imagePath: AssetsPath.movie1PNG, rating: 8.4, movieGenre: "Sci-fi", releaseYear: 2016, duration: '1h 54m'),
   MovieModel(movieId: 12, movieName: 'Rogue One: A Star Wars Story', imagePath: AssetsPath.movie1PNG, rating: 8.4, movieGenre: "Sci-fi", releaseYear: 2016, duration: '1h 54m'),

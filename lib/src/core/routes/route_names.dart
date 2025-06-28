@@ -7,4 +7,6 @@ class RoutesName {
   static const String personalization = '/personalization';
   static const String parent = '/parent';
   static const String videoDetails = '/video-details';
+  static const String seriesDetails = '/series-details';
+
 }
