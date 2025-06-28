@@ -37,6 +37,7 @@ class AssetsPath {
   static const String movie5PNG = '$_baseImagePath/user/movie5.png';
   static const String movie6PNG = '$_baseImagePath/user/movie6.png';
   static const String movie7PNG = '$_baseImagePath/user/movie7.png';
+  static const String movie8PNG = '$_baseImagePath/user/movie8.jpg';
 
   static const String star1PNG = '$_baseImagePath/user/pic1.png';
   static const String star2PNG = '$_baseImagePath/user/pic2.png';
@@ -46,6 +47,6 @@ class AssetsPath {
   static const String star6PNG = '$_baseImagePath/user/pic6.jpg';
   static const String star7PNG = '$_baseImagePath/user/pic7.jpg';
 
-
+  static const String volumeIconSVG = '$_baseIconPath/user/volume.svg';
 
 }

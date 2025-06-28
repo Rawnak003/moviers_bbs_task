@@ -1,3 +1,4 @@
+import 'package:bbs_task/src/feature/data/providers/user/trailer_player_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -24,6 +25,7 @@ void main() {
         ChangeNotifierProvider(create: (_) => TextFieldFocusProvider()),
         ChangeNotifierProvider(create: (_) => GenreProvider()),
         ChangeNotifierProvider(create: (_) => ParentScreenProvider()),
+        ChangeNotifierProvider(create: (_) => TrailerPlayerProvider()),
       ],
       child: const Moviers(),
     ),

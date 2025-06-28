@@ -1,11 +1,12 @@
-import 'package:bbs_task/src/feature/data/providers/user/parent_screen_provider.dart';
-import 'package:bbs_task/src/feature/data/static_data/user/popular_star_data.dart';
+import 'package:bbs_task/src/feature/presentation/screens/user/home/widgets/trailer_player_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../../app/app_spacing.dart';
 import '../../../../../core/constant/colors.dart';
 import '../../../../../core/constant/strings.dart';
+import '../../../../data/providers/user/parent_screen_provider.dart';
+import '../../../../data/static_data/user/popular_star_data.dart';
 import 'widgets/custom_movie_banner_widget.dart';
 import 'widgets/custom_movie_card.dart';
 import 'widgets/custom_star_card.dart';
@@ -39,7 +40,7 @@ class HomeScreen extends StatelessWidget {
             _buildSectionContainer(context: context, child: Column(
               children: [
                 _buildSectionHeader(context: context, title: AppStrings.weeklyHighlights,),
-
+                TrailerPlayerWidget(),
               ],
             ),),
             _buildSectionHeader(context: context, title: AppStrings.popularStar,),
