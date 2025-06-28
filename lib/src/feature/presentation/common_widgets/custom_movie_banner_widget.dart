@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-
-import '../../../../../../app/app_spacing.dart';
-import '../../../../../../core/constant/assets_path.dart';
-import '../../../../../../core/constant/colors.dart';
-import '../../../../../../core/constant/strings.dart';
-import '../../../../../data/static_data/user/movie_data.dart';
+import '../../../app/app_spacing.dart';
+import '../../../core/constant/colors.dart';
+import '../../data/static_data/user/movie_data.dart';
 import 'custom_movie_info_tab.dart';
 
 class CustomMovieBannerWidget extends StatelessWidget {
@@ -69,26 +65,6 @@ class CustomMovieBannerWidget extends StatelessWidget {
                 const SizedBox(height: AppSpacing.verticalPadding * 0.5),
                 CustomMovieInfoTab(index: 0, showGenre: true,),
                 const SizedBox(height: AppSpacing.verticalPadding * 2),
-                Row(
-                  children: [
-                    Expanded(
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(backgroundColor: AppColors.primaryColor),
-                        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                          SvgPicture.asset(AssetsPath.playIconSVG),
-                          const SizedBox(width: 8),
-                          Text(AppStrings.watchMovie),
-                        ]),
-                      ),
-                    ),
-                    const SizedBox(width: AppSpacing.verticalPadding),
-                    ElevatedButton(
-                      onPressed: () {},
-                      child: SvgPicture.asset(AssetsPath.watchListIconSVG, colorFilter: ColorFilter.mode(AppColors.lighterGreyColor, BlendMode.srcIn),),),
-                  ],
-                ),
-                const SizedBox(height: AppSpacing.verticalPadding * 2),
               ],
             ),
           ),
@@ -97,3 +73,4 @@ class CustomMovieBannerWidget extends StatelessWidget {
     );
   }
 }
+

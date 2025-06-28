@@ -1,7 +1,7 @@
 import 'dart:ui';
 import 'package:bbs_task/src/core/constant/assets_path.dart';
 import 'package:bbs_task/src/core/constant/colors.dart';
-import 'package:bbs_task/src/feature/presentation/screens/user/home/widgets/custom_movie_info_tab.dart';
+import 'package:bbs_task/src/feature/presentation/common_widgets/custom_movie_info_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
@@ -38,14 +38,12 @@ class _TrailerPlayerWidgetState extends State<TrailerPlayerWidget> {
     return Consumer<TrailerPlayerProvider>(
       builder: (_, provider, __) {
         final controller = provider.controller;
-
         if (!provider.isInitialized) {
           return SizedBox(
             height: AppSpacing.screenHeight(context) * 0.25,
             child: const Center(child: CircularProgressIndicator()),
           );
         }
-
         return Padding(
           padding: const EdgeInsets.all(AppSpacing.horizontalPadding),
           child: Column(

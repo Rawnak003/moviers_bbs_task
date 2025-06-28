@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../../app/app_spacing.dart';
-import '../../../../../../core/constant/colors.dart';
-import '../../../../../data/static_data/user/movie_data.dart';
+import '../../../app/app_spacing.dart';
+import '../../../core/constant/colors.dart';
+import '../../data/static_data/user/movie_data.dart';
 
 class CustomMovieInfoTab extends StatelessWidget {
   const CustomMovieInfoTab({super.key, required this.index, this.showGenre = false});

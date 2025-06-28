@@ -6,4 +6,5 @@ class RoutesName {
   static const String otpVerification = '/otp-verification';
   static const String personalization = '/personalization';
   static const String parent = '/parent';
+  static const String videoDetails = '/video-details';
 }

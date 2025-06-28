@@ -49,4 +49,11 @@ class AssetsPath {
 
   static const String volumeIconSVG = '$_baseIconPath/user/volume.svg';
 
+  static const String playButtonIconSVG = '$_baseIconPath/play_button.svg';
+  static const String movieTrailerPNG = '$_baseImagePath/user/movie_trailer.png';
+
+  static const String contentPlaySVG = '$_baseIconPath/user/content_play.svg';
+  static const String contentUserSVG = '$_baseIconPath/user/content_user.svg';
+  static const String contentStarSVG = '$_baseIconPath/user/content_star.svg';
+
 }

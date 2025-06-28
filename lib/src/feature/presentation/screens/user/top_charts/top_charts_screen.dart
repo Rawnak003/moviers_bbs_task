@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/constant/strings.dart';
 import '../../../../data/static_data/user/movie_data.dart';
-import '../home/widgets/custom_movie_info_tab.dart';
+import '../../../common_widgets/custom_movie_info_tab.dart';
 
 class TopChartsScreen extends StatelessWidget {
   const TopChartsScreen({super.key});

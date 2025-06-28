@@ -48,4 +48,22 @@ class AppStrings{
   static const String viewAll = 'View All';
   static const String weeklyHighlights = 'Weekly Highlights';
   static const String popularStar = 'Popular Star';
+  static const String more = 'More';
+  static const String priceAnnually = '\$79.99 / year';
+  static const String priceMonthly = '\$7.99 / monthly';
+  static const String billAnnually = 'Billed annually with 14-day trial';
+  static const String billMonthly = 'Billed monthly';
+  static const String trailers = 'Trailers';
+  static const String subscription = 'Subscribe to Premium Plan';
+  static const String annually = 'Annually';
+  static const String monthly = 'Monthly';
+  static const String unlimitedContent = 'Unlimited Content';
+  static const String unlimitedContentDescription = 'Watch unlimited content in one app';
+  static const String sharingAccount = 'Sharing Accounts';
+  static const String sharingAccountDescription = 'Enjoy access with your beloved friends and family';
+  static const String fhdQuality = 'FHD Quality';
+  static const String fhdQualityDescription = 'The service for you with best quality player';
+  static const String subscribeDetails = 'Get the premium plan and get unlimited access to content for watching movies and series.';
+
+  static const String movieDetails = 'A Star Wars Story itself focuses on the Rebel Alliance which recruits Jyn Erso (Felicity Jones) after the formation of the Galaxy earning his living Told there is a woman named Jyn Erso (Felicity Jones).\n\nA rebel soldier and criminal is about to face his greatest challenge when Mon Mothma (Genevieve O\'Reilly) sends him on a dangerous mission.\nJyn is tasked with stealing the plans for the Death Star, the Empire\'s weapon of mass destruction that could destroy a planet.\n\nWith the help of rebel strongholds, swordsmen, and other troops, Jyn will become part of something very big she never thought of before.';
 }
