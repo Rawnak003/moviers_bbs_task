@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/constant/colors.dart';
 import '../../../../../core/constant/strings.dart';
+import '../../../../../core/routes/route_names.dart';
 import '../../../common_widgets/custom_movie_banner_widget.dart';
 import '../../../common_widgets/custom_watch_button.dart';
 
@@ -43,7 +44,7 @@ class SeriesDetailsScreen extends StatelessWidget {
                 child: Text(AppStrings.seriesDetails, style: textTheme.bodyMedium?.copyWith(color: AppColors.greyColor,),),
               ),
               SizedBox(
-                height: AppSpacing.screenHeight(context) * 0.33,
+                height: AppSpacing.screenHeight(context) * 0.32,
                 child: PageView.builder(
                   itemCount: 2,
                   itemBuilder: (context, index) {
@@ -55,7 +56,7 @@ class SeriesDetailsScreen extends StatelessWidget {
                 index: 8,
                 buttonTitle: AppStrings.continueWatch,
                 onTapWatchButton: () {
-                  // TODO : implement watch video
+                  Navigator.pushNamed(context, RoutesName.videoStreamScreen);
                 },
               ),
             ],

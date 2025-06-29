@@ -56,7 +56,7 @@ class ParentScreen extends StatelessWidget {
                   destinations: [
                     _buildNavDestination(iconPath: AssetsPath.homeIconSVG, selectedIconPath: AssetsPath.homeFilledIconSVG, label: AppStrings.home, index: 0, selectedIndex: provider.selectedIndex,),
                     _buildNavDestination(iconPath: AssetsPath.watchListIconSVG, selectedIconPath: AssetsPath.watchListFilledIconSVG, label: AppStrings.watchList, index: 1, selectedIndex: provider.selectedIndex,),
-                    _buildNavDestination(iconPath: AssetsPath.searchIconSVG, label: AppStrings.search, index: 2, selectedIndex: provider.selectedIndex,),
+                    _buildNavDestination(iconPath: AssetsPath.searchIconSVG, selectedIconPath: AssetsPath.searchIconFilledSVG,label: AppStrings.search, index: 2, selectedIndex: provider.selectedIndex,),
                     NavigationDestination(icon: Image.asset(AssetsPath.accountIconPNG, height: 24, width: 24,), label: AppStrings.accounts,),
                   ],
                 ),

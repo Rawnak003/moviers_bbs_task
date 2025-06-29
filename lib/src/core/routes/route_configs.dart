@@ -1,4 +1,5 @@
 import 'package:bbs_task/src/feature/presentation/screens/user/video_details/video_details_screen.dart';
+import 'package:bbs_task/src/feature/presentation/screens/user/video_streaming/video_streaming_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../feature/presentation/screens/auth/login_screen.dart';
@@ -8,7 +9,7 @@ import '../../feature/presentation/screens/on_boarding/on_boarding_screen.dart';
 import '../../feature/presentation/screens/splash/splash_screen.dart';
 import '../../feature/presentation/screens/user/parent/parent_screen.dart';
 import '../../feature/presentation/screens/user/personalization/personalization_screen.dart';
-import '../../feature/presentation/screens/user/series_details/series_details_widget.dart';
+import '../../feature/presentation/screens/user/series_details/series_details_screen.dart';
 import 'route_names.dart';
 
 class RouteConfigs {
@@ -49,6 +50,10 @@ class RouteConfigs {
       case RoutesName.seriesDetails:
         return MaterialPageRoute(
           builder: (context) => SeriesDetailsScreen(),
+        );
+      case RoutesName.videoStreamScreen:
+        return MaterialPageRoute(
+          builder: (context) => VideoStreamingScreen(),
         );
 
       default:

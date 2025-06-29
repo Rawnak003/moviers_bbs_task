@@ -69,7 +69,7 @@ class VideoDetailsScreen extends StatelessWidget {
               ),
               CustomSectionBackground(
                 title: AppStrings.trailers,
-                action: (){},
+                action: () {},
                 child: Padding(
                   padding: const EdgeInsets.all(AppSpacing.horizontalPadding),
                   child: Stack(
