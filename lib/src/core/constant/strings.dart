@@ -44,11 +44,13 @@ class AppStrings{
   static const String accounts = 'Accounts';
   static const String watchMovie = 'Watch Movie';
   static const String watchSeries = 'Watch Series';
+  static const String continueWatch = 'Continue Watch S2E4';
   static const String topCharts = 'Top Charts';
   static const String viewAll = 'View All';
   static const String weeklyHighlights = 'Weekly Highlights';
   static const String popularStar = 'Popular Star';
   static const String more = 'More';
+  static const String season = 'Season ';
   static const String priceAnnually = '\$79.99 / year';
   static const String priceMonthly = '\$7.99 / monthly';
   static const String billAnnually = 'Billed annually with 14-day trial';
@@ -66,4 +68,5 @@ class AppStrings{
   static const String subscribeDetails = 'Get the premium plan and get unlimited access to content for watching movies and series.';
 
   static const String movieDetails = 'A Star Wars Story itself focuses on the Rebel Alliance which recruits Jyn Erso (Felicity Jones) after the formation of the Galaxy earning his living Told there is a woman named Jyn Erso (Felicity Jones).\n\nA rebel soldier and criminal is about to face his greatest challenge when Mon Mothma (Genevieve O\'Reilly) sends him on a dangerous mission.\nJyn is tasked with stealing the plans for the Death Star, the Empire\'s weapon of mass destruction that could destroy a planet.\n\nWith the help of rebel strongholds, swordsmen, and other troops, Jyn will become part of something very big she never thought of before.';
+  static const String seriesDetails = 'After the collapse of the Galactic Empire, chaos reigned. A reclusive shooter seeks to explore the outer regions, earning his living as a bounty hunter.';
 }

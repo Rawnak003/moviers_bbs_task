@@ -27,7 +27,7 @@ class VideoDetailsScreen extends StatelessWidget {
             children: [
               Stack(
                 children: [
-                  CustomMovieBannerWidget(),
+                  CustomMovieBannerWidget(index: 0,),
                   Positioned(
                     top: 60,
                     left: 20,
@@ -69,16 +69,15 @@ class VideoDetailsScreen extends StatelessWidget {
               ),
               CustomSectionBackground(
                 title: AppStrings.trailers,
+                action: (){},
                 child: Padding(
                   padding: const EdgeInsets.all(AppSpacing.horizontalPadding),
-                  child: Center(
-                    child: Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        Image.asset(AssetsPath.movieTrailerPNG,width: double.infinity,fit: BoxFit.fitWidth,),
-                        SvgPicture.asset(AssetsPath.playButtonIconSVG,)
-                      ],
-                    ),
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      Image.asset(AssetsPath.movieTrailerPNG,width: double.infinity,fit: BoxFit.fitWidth,),
+                      SvgPicture.asset(AssetsPath.playButtonIconSVG,)
+                    ],
                   ),
                 ),
               ),

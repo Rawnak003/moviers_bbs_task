@@ -7,6 +7,8 @@ class MovieModel {
   final int releaseYear;
   final String duration;
   final bool? isFavourite;
+  final int? seasonCount;
+  final int? episodeCount;
 
   MovieModel({
     required this.movieId,
@@ -17,5 +19,7 @@ class MovieModel {
     required this.releaseYear,
     required this.duration,
     this.isFavourite = false,
+    this.seasonCount,
+    this.episodeCount,
   });
 }

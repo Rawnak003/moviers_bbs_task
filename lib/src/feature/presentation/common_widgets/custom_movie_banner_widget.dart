@@ -5,7 +5,10 @@ import '../../data/static_data/user/movie_data.dart';
 import 'custom_movie_info_tab.dart';
 
 class CustomMovieBannerWidget extends StatelessWidget {
-  const CustomMovieBannerWidget({super.key});
+  const CustomMovieBannerWidget({super.key, required this.index, this.isSeries = false});
+
+  final int index;
+  final bool isSeries;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +19,7 @@ class CustomMovieBannerWidget extends StatelessWidget {
           children: [
             ClipRRect(
               child: Image.asset(
-                movieList[0].imagePath,
+                movieList[index].imagePath,
                 height: AppSpacing.screenHeight(context) * 0.48,
                 width: double.infinity,
                 fit: BoxFit.cover
@@ -48,7 +51,7 @@ class CustomMovieBannerWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    movieList[0].movieName,
+                    movieList[index].movieName,
                     style: textTheme.headlineMedium,
                   ),
                 ],
@@ -63,7 +66,7 @@ class CustomMovieBannerWidget extends StatelessWidget {
             child: Column(
               children: [
                 const SizedBox(height: AppSpacing.verticalPadding * 0.5),
-                CustomMovieInfoTab(index: 0, showGenre: true,),
+                CustomMovieInfoTab(index: index, showGenre: true, isSeries: isSeries,),
                 const SizedBox(height: AppSpacing.verticalPadding * 2),
               ],
             ),
