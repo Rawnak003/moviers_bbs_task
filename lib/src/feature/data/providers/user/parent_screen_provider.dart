@@ -10,8 +10,10 @@ class ParentScreenProvider extends ChangeNotifier {
     HomeScreen(),
   ];
 
-  int _currentIndex = 0;
+  bool _showTopCharts = false;
+  bool get showTopCharts => _showTopCharts;
 
+  int _currentIndex = 0;
   int get selectedIndex => _currentIndex;
 
   void changeIndex(int index) {
@@ -19,18 +21,20 @@ class ParentScreenProvider extends ChangeNotifier {
       return;
     }
     _currentIndex = index;
+    _showTopCharts = false;
     notifyListeners();
   }
 
-  void moveToWatchList() {
-    changeIndex(1);
+  void openTopCharts() {
+    _showTopCharts = true;
+    notifyListeners();
   }
-  void moveToSearch() {
-    changeIndex(2);
+
+  void closeTopCharts() {
+    _showTopCharts = false;
+    notifyListeners();
   }
-  void moveToAccounts() {
-    changeIndex(3);
-  }
+
   void backToHome() {
     changeIndex(0);
   }
