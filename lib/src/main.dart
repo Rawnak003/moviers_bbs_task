@@ -9,6 +9,7 @@ import 'feature/data/providers/auth/text_field_focus_provider.dart';
 import 'feature/data/providers/splash/on_boarding_provider.dart';
 import 'feature/data/providers/splash/splash_provider.dart';
 import 'feature/data/providers/user/genre_provider.dart';
+import 'feature/data/providers/user/parent_screen_provider.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,6 +23,7 @@ void main() {
         ChangeNotifierProvider(create: (_) => OtpVerificationProvider()),
         ChangeNotifierProvider(create: (_) => TextFieldFocusProvider()),
         ChangeNotifierProvider(create: (_) => GenreProvider()),
+        ChangeNotifierProvider(create: (_) => ParentScreenProvider()),
       ],
       child: const Moviers(),
     ),

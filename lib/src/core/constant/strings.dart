@@ -39,4 +39,7 @@ class AppStrings{
   static const String personalization = 'Personalization';
   static const String chooseYourGenre = 'Choose Your Genre';
   static const String continueTo = 'Continue';
+  static const String watchList = 'Watchlist';
+  static const String search = 'Search';
+  static const String accounts = 'Accounts';
 }

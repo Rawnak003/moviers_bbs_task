@@ -31,7 +31,7 @@ class LoginProvider extends ChangeNotifier {
     FocusScope.of(context).unfocus();
     if (formKey.currentState!.validate() && _isFormFilled) {
       // TODO: implement login logic
-      Navigator.pushNamedAndRemoveUntil(context, RoutesName.home, (predicate) => false);
+      Navigator.pushNamedAndRemoveUntil(context, RoutesName.parent, (predicate) => false);
     }
   }
 
