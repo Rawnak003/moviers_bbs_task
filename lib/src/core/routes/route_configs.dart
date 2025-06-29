@@ -1,3 +1,4 @@
+import 'package:bbs_task/src/feature/presentation/screens/user/video_details/video_details_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../feature/presentation/screens/auth/login_screen.dart';
@@ -39,6 +40,10 @@ class RouteConfigs {
       case RoutesName.parent:
         return MaterialPageRoute(
           builder: (context) => ParentScreen(),
+        );
+      case RoutesName.videoDetails:
+        return MaterialPageRoute(
+          builder: (context) => VideoDetailsScreen(),
         );
 
       default:

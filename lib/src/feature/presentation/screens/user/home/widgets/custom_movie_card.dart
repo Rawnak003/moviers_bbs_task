@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../../app/app_spacing.dart';
 import '../../../../../data/static_data/user/movie_data.dart';
-import 'custom_movie_info_tab.dart';
+import '../../../../common_widgets/custom_movie_info_tab.dart';
 
 class CustomMovieCard extends StatelessWidget {
   const CustomMovieCard({
