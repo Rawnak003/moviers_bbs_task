@@ -51,6 +51,7 @@ class AppStrings{
   static const String popularStar = 'Popular Star';
   static const String more = 'More';
   static const String season = 'Season ';
+  static const String searchByName = 'Search by name...';
   static const String priceAnnually = '\$79.99 / year';
   static const String priceMonthly = '\$7.99 / monthly';
   static const String billAnnually = 'Billed annually with 14-day trial';

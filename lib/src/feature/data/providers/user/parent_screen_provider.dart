@@ -2,12 +2,13 @@ import 'package:bbs_task/src/feature/presentation/screens/user/watchlist/watch_l
 import 'package:flutter/material.dart';
 
 import '../../../presentation/screens/user/home/home_screen.dart';
+import '../../../presentation/screens/user/search/search_screen.dart';
 
 class ParentScreenProvider extends ChangeNotifier {
   final List<Widget> screens = [
     HomeScreen(),
     WatchListScreen(),
-    HomeScreen(),
+    SearchScreen(),
     HomeScreen(),
   ];
 

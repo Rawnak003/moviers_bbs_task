@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 import '../../../core/constant/colors.dart';
 import '../../../core/constant/strings.dart';
-import '../../data/providers/user/parent_screen_provider.dart';
 
 class CustomParentAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomParentAppBar({super.key, required this.child, required this.action});

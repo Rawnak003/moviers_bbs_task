@@ -11,9 +11,26 @@ class MovieProvider extends ChangeNotifier {
   List<MovieModel> get favouriteMovies =>
       _movies.where((movie) => movie.isFavourite).toList();
 
+  // add watchlist
   void toggleFavourite(int movieId) {
     final movie = _movies.firstWhere((m) => m.movieId == movieId);
     movie.isFavourite = !movie.isFavourite;
     notifyListeners();
+  }
+
+  // searching
+  String _searchQuery = '';
+  String get searchQuery => _searchQuery;
+
+  void updateSearchQuery(String query) {
+    _searchQuery = query.toLowerCase();
+    notifyListeners();
+  }
+
+  List<MovieModel> get filteredMovies {
+    if (_searchQuery.isEmpty) return _movies;
+    return _movies
+        .where((movie) => movie.movieName.toLowerCase().contains(_searchQuery))
+        .toList();
   }
 }
