@@ -82,6 +82,7 @@ class VideoDetailsScreen extends StatelessWidget {
                 ),
               ),
               CustomWatchButton(
+                index: 0,
                 buttonTitle: AppStrings.watchMovie,
                 onTapWatchButton: () {
                   showModalBottomSheet(context: context, isScrollControlled: true, builder: (context) {

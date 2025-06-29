@@ -26,6 +26,7 @@ class AssetsPath {
   static const String homeFilledIconSVG = '$_baseIconPath/user/home_filled_blue.svg';
   static const String watchListIconSVG = '$_baseIconPath/user/bookmark.svg';
   static const String watchListFilledIconSVG = '$_baseIconPath/user/bookmark_filled_blue.svg';
+  static const String watchListFilledWhiteIconSVG = '$_baseIconPath/user/bookmark_filled_white.svg';
   static const String searchIconSVG = '$_baseIconPath/user/search.svg';
   static const String accountIconPNG = '$_baseIconPath/user/user_profile.png';
   static const String playIconSVG = '$_baseIconPath/user/play.svg';

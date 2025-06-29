@@ -6,7 +6,7 @@ class MovieModel {
   final String movieGenre;
   final int releaseYear;
   final String duration;
-  final bool? isFavourite;
+  bool isFavourite;
   final int? seasonCount;
   final int? episodeCount;
 

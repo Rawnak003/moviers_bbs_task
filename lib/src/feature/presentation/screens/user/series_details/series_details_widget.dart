@@ -39,19 +39,20 @@ class SeriesDetailsScreen extends StatelessWidget {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8,),
+                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 child: Text(AppStrings.seriesDetails, style: textTheme.bodyMedium?.copyWith(color: AppColors.greyColor,),),
               ),
               SizedBox(
-                height: AppSpacing.screenHeight(context) * 0.32,
+                height: AppSpacing.screenHeight(context) * 0.33,
                 child: PageView.builder(
                   itemCount: 2,
                   itemBuilder: (context, index) {
-                    return _buildSeasonEpisodeList(context, ind: index, title: 'Season ${index + 1}');
+                    return _buildSeasonEpisodeList(context, index: index, title: 'Season ${index + 1}');
                   },
                 ),
               ),
               CustomWatchButton(
+                index: 8,
                 buttonTitle: AppStrings.continueWatch,
                 onTapWatchButton: () {
                   // TODO : implement watch video
@@ -64,19 +65,19 @@ class SeriesDetailsScreen extends StatelessWidget {
     );
   }
 
-  Expanded _buildSeasonEpisodeList(context, {required int ind, required String title}) {
-    if (ind == 1) {ind = 9;}
+  Widget _buildSeasonEpisodeList(context, {required int index, required String title}) {
+    final actualIndex = index == 1 ? 9 : 0;
     return Expanded(
       child: CustomSectionBackground(
         title: title,
         hasButton: true,
         action: () {
-          showModalBottomSheet(context: context, isScrollControlled: true, builder: (context) {return CustomEpisodeListBottomSheet(index: ind);},);
+          showModalBottomSheet(context: context, isScrollControlled: true, builder: (context) {return CustomEpisodeListBottomSheet(index: actualIndex);},);
         },
         child: Padding(
-          padding: const EdgeInsets.all(AppSpacing.horizontalPadding),
+          padding: const EdgeInsets.symmetric(horizontal: AppSpacing.horizontalPadding),
           child: SizedBox(height: AppSpacing.screenHeight(context) * 0.24,
-            child: EpisodeListShowWidget(index: ind, isVertical: false),
+            child: EpisodeListShowWidget(index: actualIndex, isVertical: false),
           ),
         ),
       ),

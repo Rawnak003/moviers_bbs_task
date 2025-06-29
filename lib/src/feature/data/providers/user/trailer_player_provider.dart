@@ -17,6 +17,7 @@ class TrailerPlayerProvider extends ChangeNotifier {
     _controller.setLooping(true);
     _controller.play();
     _controller.addListener(notifyListeners);
+    _controller.setVolume(0);
     notifyListeners();
   }
 
