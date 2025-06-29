@@ -21,7 +21,7 @@ class CustomPlayerBottomActionTab extends StatelessWidget {
           final total = provider.controller.metadata.duration;
           final remaining = total - current;
           return SizedBox(
-            width: AppSpacing.screenWidth(context) * 0.94,
+            width: AppSpacing.screenWidth(context) * 0.95,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(8),
               child: BackdropFilter(
@@ -60,7 +60,7 @@ class CustomPlayerBottomActionTab extends StatelessWidget {
                         style: const TextStyle(color: AppColors.whiteColor),
                       ),
                       SizedBox(
-                        width: AppSpacing.screenWidth(context) * 0.6,
+                        width: AppSpacing.screenWidth(context) * 0.46,
                         child: Slider(
                           value: provider.progress,
                           onChanged: provider.seekTo,
