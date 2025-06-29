@@ -28,6 +28,7 @@ class AssetsPath {
   static const String watchListFilledIconSVG = '$_baseIconPath/user/bookmark_filled_blue.svg';
   static const String watchListFilledWhiteIconSVG = '$_baseIconPath/user/bookmark_filled_white.svg';
   static const String searchIconSVG = '$_baseIconPath/user/search.svg';
+  static const String searchIconFilledSVG = '$_baseIconPath/user/search_filled.svg';
   static const String accountIconPNG = '$_baseIconPath/user/user_profile.png';
   static const String playIconSVG = '$_baseIconPath/user/play.svg';
 
@@ -65,5 +66,10 @@ class AssetsPath {
   static const String series5PNG = '$_baseImagePath/user/series5.png';
   static const String series6PNG = '$_baseImagePath/user/series6.png';
   static const String series7PNG = '$_baseImagePath/user/series7.png';
+
+  static const String fastForwardSVG = '$_baseIconPath/fast_fwd.svg';
+  static const String rewindSVG = '$_baseIconPath/rewind.svg';
+  static const String volumeButtonSVG = '$_baseIconPath/volume_up.svg';
+  static const String playerLogoSVG = '$_baseIconPath/player_logo.svg';
 
 }
