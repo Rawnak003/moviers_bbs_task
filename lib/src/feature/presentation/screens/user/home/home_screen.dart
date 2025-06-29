@@ -27,14 +27,14 @@ class HomeScreen extends StatelessWidget {
               onTap: () => Navigator.pushNamed(context, RoutesName.videoDetails),
               child: CustomMovieBannerWidget(index: 0,),
             ),
-            CustomWatchButton(buttonTitle: AppStrings.watchMovie, onTapWatchButton: () => Navigator.pushNamed(context, RoutesName.videoDetails), onTapBookmarkButton: () {},),
+            CustomWatchButton(buttonTitle: AppStrings.watchMovie, onTapWatchButton: () => Navigator.pushNamed(context, RoutesName.videoDetails), index: 0,),
             const SizedBox(height: AppSpacing.verticalPadding * 2),
             CustomSectionBackground(
               title: AppStrings.topCharts,
               hasButton: true,
               action: () => context.read<ParentScreenProvider>().openTopCharts(),
               child: SizedBox(
-                height: AppSpacing.screenHeight(context) * 0.27,
+                height: AppSpacing.screenHeight(context) * 0.28,
                 child: ListView.separated(
                   padding: EdgeInsets.only(left: AppSpacing.horizontalPadding, top: AppSpacing.verticalPadding),
                   scrollDirection: Axis.horizontal,

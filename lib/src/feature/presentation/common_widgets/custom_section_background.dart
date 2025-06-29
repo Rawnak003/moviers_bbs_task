@@ -33,7 +33,7 @@ class CustomSectionBackground extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.fromLTRB(16, 12, 16, 4),
+            padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
             child: Row(
               children: [
                 Text(title, style: textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.w600,),),
@@ -50,6 +50,7 @@ class CustomSectionBackground extends StatelessWidget {
             ),
           ),
           child,
+          const SizedBox(height: 8,),
         ],
       ),
     );
